@@ -21,15 +21,14 @@ export default function Home() {
 
   useEffect(() => {
     Promise.all([
-      safeGet(() => api.freeMovies()),           // actually watchable on LANTERN
-      safeGet(() => api.anime()),                 // Anime
-      safeGet(() => api.trending('all')),         // Global trending
-      safeGet(() => api.topRated('movie')),       // Top rated movies
-      safeGet(() => api.topRated('tv')),          // Top rated TV
-      safeGet(() => api.nowPlaying()),            // In theatres now
-      
-    ]).then(([free, anime], global, topMovie, topTV, nowPlay) => {
-      setSections({ free, anime , global, topMovie, topTV, nowPlay});
+      safeGet(() => api.freeMovies()),        // actually watchable on LANTERN
+      safeGet(() => api.anime()),             // Anime
+      safeGet(() => api.trending('all')),     // Global trending
+      safeGet(() => api.topRated('movie')),   // Top rated movies
+      safeGet(() => api.topRated('tv')),      // Top rated TV
+      safeGet(() => api.nowPlaying()),        // In theatres now
+    ]).then(([free, anime, global, topMovie, topTV, nowPlay]) => {  // Fix 1: moved all destructuring inside single array
+      setSections({ free, anime, global, topMovie, topTV, nowPlay });
     }).catch(err => setError(err.message));
   }, []);
 
@@ -62,13 +61,12 @@ export default function Home() {
     </div>
   );
 
-  const { free, anime, global, topMovie, topTV, nowPlay} = sections;
+  const { free, anime, global, topMovie, topTV, nowPlay } = sections;
 
   // Hero: pull from free/watchable content first, fall back to trending
   const heroItems = [
     ...(free.results || []),
-    ...(indMovie.results || []),
-    ...(global.results || []),
+    ...(global.results || []),   // Fix 2: removed indMovie (undefined), kept global
   ].filter((item, idx, arr) => arr.findIndex(i => i.id === item.id) === idx)
    .slice(0, 10);
 
@@ -91,9 +89,8 @@ export default function Home() {
           badge="FREE"
         />
 
-        
         {/* Global section */}
-        
+        <div className="india-divider">   {/* Fix 3: restored missing opening <div> tag */}
           <span>🌍 GLOBAL</span>
         </div>
         <MediaRow title="🌐 TRENDING WORLDWIDE"   items={global.results    || []}                browseLink="/browse/movie" />
