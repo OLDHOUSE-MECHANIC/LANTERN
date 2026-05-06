@@ -1,44 +1,20 @@
-# 🔦 LANTERN
+<img width="817" height="144" alt="image" src="https://github.com/user-attachments/assets/7525672c-11ed-4bea-a8be-63ac30bca9a1" />
+
 
 A self-hosted home streaming hub and media discovery platform — built as a full-stack concept project demonstrating React, Express, REST API integration, and product design.
 
----
 
-## What it does
 
-LANTERN is a Netflix-style frontend for discovering movies and TV shows. It uses the [TMDB API](https://www.themoviedb.org/) for metadata, and plays content from **legally licensed, openly available sources only**:
+## Demo:
+Give it try, Its a cool project.
+# https://lantern-dqft.onrender.com/
 
-| Source | What's available |
-|---|---|
-| **YouTube** (official) | Full movies officially uploaded by studios (Warner Bros, Paramount etc.) with ads — freely and legally watchable |
-| **Internet Archive** | Public domain films (pre-copyright-expiry classics) via archive.org |
-| **Trailer + Where to Watch** | For everything else — official YouTube trailer + links to Netflix, Prime, Hotstar etc. |
-
-There are no grey-area embed sources, no unlicensed stream iframes, and no piracy anywhere in the codebase.
-
----
-
-## Features
-
-- 🎬 Hero banner with auto-rotation — surfaces free-to-watch content first
-- 🇮🇳 Deep Indian content curation — Bollywood, South Indian, Indian web series, India trending
-- 🌍 Balanced India / Global split across home sections
-- ▶ Free movie player — YouTube official + Internet Archive embeds
-- 📺 Trailer player + Where to Watch panel for subscription content
-- 🔍 Search across movies and TV
-- 📂 Browse by genre with sort filters
-- 🕐 Continue Watching (localStorage)
-- Fully responsive — works on mobile, tablet, and TV browsers
-
----
 
 ## Stack
 
 - **Frontend:** React (CRA), React Router, CSS custom properties
 - **Backend:** Node.js + Express (TMDB proxy + source resolution)
 - **APIs:** TMDB, YouTube IFrame API, Internet Archive
-
----
 
 ## Setup
 
@@ -64,7 +40,23 @@ http://localhost:3000
 ```
 The server also prints your local network IP — open that URL on your TV or phone.
 
----
+
+
+## What it does
+
+LANTERN is a Netflix-style frontend for discovering movies and TV shows. It uses the [TMDB API](https://www.themoviedb.org/) for metadata, and plays content from **legally licensed, openly available sources only**:
+
+| Source | What's available |
+|---|---|
+| **YouTube** (official) | Full movies officially uploaded by studios (Warner Bros, Paramount etc.) with ads — freely and legally watchable |
+| **Internet Archive** | Public domain films (pre-copyright-expiry classics) via archive.org |
+| **Trailer + Where to Watch** | For everything else — official YouTube trailer + links to Netflix, Prime, Hotstar etc. |
+
+There are no grey-area embed sources, no unlicensed stream iframes, and no piracy anywhere in the codebase.
+
+
+
+
 
 ## Project structure
 
