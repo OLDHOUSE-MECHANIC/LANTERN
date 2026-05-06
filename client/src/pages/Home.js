@@ -22,18 +22,14 @@ export default function Home() {
   useEffect(() => {
     Promise.all([
       safeGet(() => api.freeMovies()),           // actually watchable on LANTERN
-      safeGet(() => api.trendingIndia('movie')), // Indian trending movies
-      safeGet(() => api.trendingIndia('tv')),    // Indian trending TV
-      safeGet(() => api.bollywood()),             // Bollywood
-      safeGet(() => api.southIndian()),           // South Indian
-      safeGet(() => api.indianSeries()),          // Indian web series
+      safeGet(() => api.anime()),                 // Anime
       safeGet(() => api.trending('all')),         // Global trending
       safeGet(() => api.topRated('movie')),       // Top rated movies
       safeGet(() => api.topRated('tv')),          // Top rated TV
       safeGet(() => api.nowPlaying()),            // In theatres now
-      safeGet(() => api.anime()),                 // Anime
-    ]).then(([free, indMovie, indTV, bolly, south, indSeries, global, topMovie, topTV, nowPlay, anime]) => {
-      setSections({ free, indMovie, indTV, bolly, south, indSeries, global, topMovie, topTV, nowPlay, anime });
+      
+    ]).then(([free, anime], global, topMovie, topTV, nowPlay) => {
+      setSections({ free, anime , global, topMovie, topTV, nowPlay});
     }).catch(err => setError(err.message));
   }, []);
 
@@ -66,7 +62,7 @@ export default function Home() {
     </div>
   );
 
-  const { free, indMovie, indTV, bolly, south, indSeries, global, topMovie, topTV, nowPlay, anime } = sections;
+  const { free, anime, global, topMovie, topTV, nowPlay} = sections;
 
   // Hero: pull from free/watchable content first, fall back to trending
   const heroItems = [
@@ -95,18 +91,9 @@ export default function Home() {
           badge="FREE"
         />
 
-        {/* India section */}
-        <div className="india-divider">
-          <span>🇮🇳 INDIA</span>
-        </div>
-        <MediaRow title="🔥 TRENDING IN INDIA"       items={indMovie.results  || []} type="movie" browseLink="/browse/movie" />
-        <MediaRow title="🎬 BOLLYWOOD"               items={bolly.results     || []} type="movie" browseLink="/browse/movie" />
-        <MediaRow title="🎭 SOUTH INDIAN"            items={south.results     || []} type="movie" browseLink="/browse/movie" />
-        <MediaRow title="📺 INDIAN WEB SERIES"       items={indSeries.results || []} type="tv"    browseLink="/browse/tv"    />
-        <MediaRow title="🌟 TRENDING INDIAN SERIES"  items={indTV.results     || []} type="tv"    browseLink="/browse/tv"    />
-
+        
         {/* Global section */}
-        <div className="india-divider">
+        
           <span>🌍 GLOBAL</span>
         </div>
         <MediaRow title="🌐 TRENDING WORLDWIDE"   items={global.results    || []}                browseLink="/browse/movie" />
