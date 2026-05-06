@@ -1,0 +1,22 @@
+{
+  "name": "tbd-stream",
+  "version": "1.0.0",
+  "description": "Personal streaming aggregator",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev:server": "nodemon server/index.js",
+    "dev:client": "cd client && npm start",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build": "cd client && npm run build",
+    "setup": "npm install && cd client && npm install"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2"
+  }
+}

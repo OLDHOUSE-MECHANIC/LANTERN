@@ -1,0 +1,28 @@
+.media-row { padding: 0 40px 32px; }
+
+.row-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.row-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 1.5px;
+  color: var(--text-primary);
+}
+
+.row-more {
+  font-size: 13px;
+  color: var(--accent-bright);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.row-more:hover { color: var(--text-primary); }
+
+@media (max-width: 600px) {
+  .media-row { padding: 0 16px 24px; }
+  .row-title { font-size: 18px; }
+}
