@@ -24,23 +24,15 @@ LAN Television. Every Room Now. Wanted something that runs at home, looks good, 
 
 ## What It Does
 
-Discover movies and TV shows, pull metadata from TMDB, and play from legally available sources only:
-
-| Source | What's available |
-|---|---|
-| **YouTube** (official) | Full movies officially uploaded by studios — Warner Bros, Paramount etc. Free, legal, with ads |
-| **Internet Archive** | Public domain classics via archive.org |
-| **Trailer + Where to Watch** | Everything else gets its official trailer + links to where it's actually streaming |
-
-No grey-area embeds. No unlicensed iframes. Nothing sketchy in the codebase.
+Pulls metadata from TMDB and plays from whatever's legally available. Official full movies uploaded by studios on YouTube (Warner Bros, Paramount, the usual — free with ads), public domain classics from Internet Archive, and for everything else it gives you the trailer and links to where it's actually streaming. That's the whole pipeline.
 
 ---
 
 ## Stack
 
-- **Frontend:** React (CRA), React Router, CSS custom properties
-- **Backend:** Node.js + Express (TMDB proxy + source resolution)
-- **APIs:** TMDB, YouTube IFrame API, Internet Archive
+**Frontend:** React (CRA), React Router, CSS custom properties  
+**Backend:** Node.js + Express (TMDB proxy + source resolution)  
+**APIs:** TMDB, YouTube IFrame API, Internet Archive  
 
 ---
 
