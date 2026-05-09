@@ -1,14 +1,40 @@
+![Node.js](https://img.shields.io/badge/Node.js-Express-green)
+![React](https://img.shields.io/badge/React-CRA-blue)
+![TMDB](https://img.shields.io/badge/API-TMDB-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-orange)
+![Status](https://img.shields.io/badge/Status-Live-success)
+
 <img width="817" height="144" alt="image" src="https://github.com/user-attachments/assets/7525672c-11ed-4bea-a8be-63ac30bca9a1" />
 
+A self-hosted home streaming hub and media discovery platform. Full-stack, runs on your local network, works on any screen in the house.
 
-A self-hosted home streaming hub and media discovery platform — built as a full-stack concept project demonstrating React, Express, REST API integration, and product design.
+## Demo
 
+Give it a try, it's a cool project.
 
-
-## Demo:
-Give it try, Its a cool project.
 # https://lantern-dqft.onrender.com/
 
+---
+
+## Why LANTERN?
+
+LAN Television. Every Room Now. Wanted something that runs at home, looks good, and doesn't need a subscription to tell you what's available to watch.
+
+---
+
+## What It Does
+
+Discover movies and TV shows, pull metadata from TMDB, and play from legally available sources only:
+
+| Source | What's available |
+|---|---|
+| **YouTube** (official) | Full movies officially uploaded by studios — Warner Bros, Paramount etc. Free, legal, with ads |
+| **Internet Archive** | Public domain classics via archive.org |
+| **Trailer + Where to Watch** | Everything else gets its official trailer + links to where it's actually streaming |
+
+No grey-area embeds. No unlicensed iframes. Nothing sketchy in the codebase.
+
+---
 
 ## Stack
 
@@ -16,49 +42,36 @@ Give it try, Its a cool project.
 - **Backend:** Node.js + Express (TMDB proxy + source resolution)
 - **APIs:** TMDB, YouTube IFrame API, Internet Archive
 
-## Setup
+---
 
-**1. Get a free TMDB API key**
+## Get It Running
+
+**1. Get a free TMDB API key**  
 → [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api)
 
-**2. Configure environment**
+**2. Set up your environment**
 ```bash
 cp .env.example .env
 # Edit .env and set TMDB_API_KEY=your_key_here
 ```
 
-**3. Install and run**
+**3. Install and start**
 ```bash
 npm install
 cd client && npm install && npm run build && cd ..
 npm start
 ```
 
-**4. Open in browser**
+**4. Open it up**
 ```
 http://localhost:3000
 ```
-The server also prints your local network IP — open that URL on your TV or phone.
 
+Server also prints your local network IP on startup — open that on your TV or phone and you're done.
 
+---
 
-## What it does
-
-LANTERN is a Netflix-style frontend for discovering movies and TV shows. It uses the [TMDB API](https://www.themoviedb.org/) for metadata, and plays content from **legally licensed, openly available sources only**:
-
-| Source | What's available |
-|---|---|
-| **YouTube** (official) | Full movies officially uploaded by studios (Warner Bros, Paramount etc.) with ads — freely and legally watchable |
-| **Internet Archive** | Public domain films (pre-copyright-expiry classics) via archive.org |
-| **Trailer + Where to Watch** | For everything else — official YouTube trailer + links to Netflix, Prime, Hotstar etc. |
-
-There are no grey-area embed sources, no unlicensed stream iframes, and no piracy anywhere in the codebase.
-
-
-
-
-
-## Project structure
+## Project Structure
 
 ```
 LANTERN/
@@ -89,4 +102,4 @@ LANTERN/
 
 ## Legal
 
-LANTERN hosts no content. All metadata is from TMDB under their terms of use. Playable content is either officially uploaded to YouTube by rights holders, or in the public domain via Internet Archive. "Where to Watch" links direct users to licensed platforms.
+LANTERN hosts nothing. Metadata is from TMDB under their terms. Playable content is either officially on YouTube by the rights holders or public domain via Internet Archive. Everything else points you to where it's actually licensed.
